@@ -3,6 +3,6 @@
 
 return [
     'defaults' => [
-        'area' => 'afganistan'
+        'area' => 'Afghanistan'
     ]
 ];

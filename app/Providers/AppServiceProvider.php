@@ -29,5 +29,11 @@ class AppServiceProvider extends ServiceProvider
             $prefix = $area->parent ? $area->parent->name . ' ' : '';
             $area->slug = Str::slug($prefix . $area->name);
         });
+
+        \App\Category::creating(function ($category) {
+            $prefix = $category->parent ? $category->parent->name . ' ' : '';
+            $category->slug = Str::slug($prefix . $category->name);
+        });
+
     }
 }
