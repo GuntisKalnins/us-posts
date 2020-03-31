@@ -12,18 +12,15 @@ class Listing extends Model
     use SoftDeletes, OrderableTrait;
 
 
-
-
-
-    public function scopeIsLive()
+    public function scopeIsLive($query)
     {
-        return $this->where('live', 1);
+        return $query->where('live', 1);
     }
 
 
-    public function scopeIsNotLive()
+    public function scopeIsNotLive($query)
     {
-        return $this->where('live', 0);
+        return $query->where('live', 0);
     }
 
 
@@ -36,10 +33,8 @@ class Listing extends Model
     public function scopeInArea($query, Area $area)
     {
         return $query->whereIn('area_id', array_merge(
-
             [$area->id],
             $area->descendants->pluck('id')->toArray()
-
         ));
     }
 
