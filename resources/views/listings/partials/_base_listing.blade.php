@@ -13,6 +13,6 @@
         </ul>
 
 
-        {{ $links }}
+        {{ $links ?? '' }}
     </div>
 </div>
