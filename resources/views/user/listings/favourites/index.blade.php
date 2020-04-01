@@ -2,19 +2,17 @@
 
 @section('content')
 
-    <div class="container">
-        @if ($listings->count())
-        
-            @foreach ($listings as $listing)
-                @include ('listings.partials._listing_favourite', compact('listing'))
-            @endforeach
+    @if ($listings->count())
+    
+        @foreach ($listings as $listing)
+            @include ('listings.partials._listing_favourite', compact('listing'))
+        @endforeach
 
-        {{ $listings->links() }}
+    {{ $listings->links() }}
 
-        @else
-            <p>No favourite listings.</p>
-        @endif
+    @else
+        <p>No favourite listings.</p>
+    @endif
 
-    </div>
 
 @endsection

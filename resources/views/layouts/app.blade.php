@@ -7,9 +7,10 @@
     <body>
         <div id="app">
             @include('layouts.partials._navigation')
-
             <main class="py-4">
-                @yield('content')
+                <div class="container">
+                    @yield('content')
+                </div>
             </main>
         </div>
     </body>
