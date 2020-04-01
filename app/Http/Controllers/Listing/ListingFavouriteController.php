@@ -26,7 +26,7 @@ class ListingFavouriteController extends Controller
     {
         $request->user()->favouriteListings()->syncWithoutDetaching([$listing->id]);
 
-        return back();
+        return back()->withSuccess('Listing added to favourites.');
     }
 
 
@@ -34,6 +34,6 @@ class ListingFavouriteController extends Controller
     {
         $request->user()->favouriteListings()->detach($listing);
 
-        return back();
+        return back()->withSuccess('Listing removed to favourites.');;
     }
 }
