@@ -34,6 +34,9 @@ Route::group(['prefix' => '/{area}'], function () {
 
         Route::get('/viewed', 'ListingViewedController@index')->name('listings.viewed.index');
 
+
+        Route::post('/{listing}/contact', 'ListingContactController@store')->name('listings.contact.store');
+
     });
 
 
