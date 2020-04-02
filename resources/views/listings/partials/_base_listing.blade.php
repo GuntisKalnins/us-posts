@@ -10,6 +10,7 @@
         <ul class="list-inline">
             <li><time>{{ $listing->created_at->diffForHumans() }}</time></li>
             <li>{{ $listing->user->name }}</li>
+            <li>Views: {{ $listing->views() }}</li>
         </ul>
 
 

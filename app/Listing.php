@@ -74,10 +74,12 @@ class Listing extends Model
         return $this->morphToMany(User::class, 'favouriteable');
     }
 
+
     public function favouritedBy(User $user)
     {
         return $this->favourites->contains($user);
     }
+
 
     public function viewedUsers()
     {
@@ -85,5 +87,9 @@ class Listing extends Model
     }
 
 
+    public function views()
+    {
+        return array_sum($this->viewedUsers->pluck('pivot.count')->toArray());
+    }
 
 }
