@@ -15,10 +15,24 @@
                             <label for="title">Title</label>
                             <input type="text" name="title" id="title" class="form-control">
                         </div>
+                        
+                            @if ($errors->has('title'))
+                                <span class="help-block">
+                                    {{ $errors->first('title') }}
+                                </span>
+                            @endif
+
                         <div class="form-group">
                             <label for="body">Body</label>
                             <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control"></textarea>
                         </div>
+
+                            @if ($errors->has('body'))
+                                <span class="help-block">
+                                    {{ $errors->first('body') }}
+                                </span>
+                            @endif
+
                         <div class="fomr-group">
                             <button type="submit" class="btn btn-default">Save</button>                        
                         </div>

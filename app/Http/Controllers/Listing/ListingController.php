@@ -6,6 +6,7 @@ use App\{Area, Category, Listing};
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Jobs\UserViewedListing;
+use App\Http\Requests\StoreListingFormRequest;
 
 class ListingController extends Controller
 {
@@ -40,7 +41,7 @@ class ListingController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreListingFormRequest $request)
     {
         $listing = new Listing;
         $listing->title = $request->title;
