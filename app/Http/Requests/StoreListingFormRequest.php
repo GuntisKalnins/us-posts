@@ -26,6 +26,18 @@ class StoreListingFormRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'body' => 'required|max:2000',
+            'category_id' => [
+                'required',
+                \Illuminate\Validation\Rule::exists('categories', 'id')->where(function ($query) {
+                    $query->where('usable', false);
+                })
+            ],
+            'area_id' => [
+                'required',
+                \Illuminate\Validation\Rule::exists('areas', 'id')->where(function ($query) {
+                    $query->where('usable', false);
+                })
+            ]
         ];
     }
 }
