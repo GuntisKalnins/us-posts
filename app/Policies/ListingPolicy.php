@@ -11,18 +11,24 @@ class ListingPolicy
 
     public function edit(User $user, Listing $listing)
     {
-        return $listing->ownedByUser($user);
+        return $listing->ownedByUser($user, $listing);
     }
 
 
     public function update(User $user, Listing $listing)
     {
-        return $listing->ownedByUser($user);
+        return $listing->ownedByUser($user, $listing);
 
     }
 
 
     public function destroy(User $user, Listing $listing)
+    {
+        return $listing->touch($user, $listing);
+
+    }
+
+    public function touch(User $user, Listing $listing)
     {
         return $listing->ownedByUser($user);
 

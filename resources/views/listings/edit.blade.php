@@ -36,8 +36,12 @@
                                 </span>
                             @endif
 
-                        <div class="fomr-group">
-                            <button type="submit" class="btn btn-default">Save</button>                        
+                        <div class="fomr-group clearfix">
+                            <button type="submit" class="btn btn-default">Save</button>
+
+                            @if(!$listing->live())
+                                <button type="submit" name="payment" value="true" class="btn btn-primary">Continue to payment</button>
+                            @endif    
                         </div>
 
                         @if ($listing->live())
