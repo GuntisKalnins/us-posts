@@ -8,7 +8,7 @@
 
                 <div class="card-body">
                     @if($listing->cost() == 0)
-                        <form action="#" method="post">
+                        <form action="{{ route('listings.payment.update', [$area, $listing]) }}" method="post">
                             <p>There is nothing for you to pay.</p>
                             <button type="submit" class="btn btn-primary">Complete</button>
 
@@ -16,7 +16,7 @@
                             {{ method_field('PATCH') }}
                         </form>
                     @else
-                        <p>Total cost: ${{ number_format($listing_cost(), 2) }}</p>
+                        <!-- <p>Total cost: ${{ number_format($listing_cost(), 2) }}</p> -->
                     @endif
                 </div>
             </div>
