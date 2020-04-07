@@ -45,6 +45,8 @@ Route::group(['prefix' => '/{area}'], function () {
 
         Route::get('/published', 'ListingPublishedController@index')->name('listings.published.index');
 
+        Route::get('/{listing}/share', 'ListingShareController@index')->name('listings.share.index');
+        Route::post('/{listing}/share', 'ListingShareController@store')->name('listings.share.store');
 
 
 
