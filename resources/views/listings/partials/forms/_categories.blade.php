@@ -7,9 +7,9 @@
 
                 @foreach ($category->children as $child)
                     @if (isset($listing) && $listing->category_id == $child->id || old('category_id') === $child->id)
-                        <option value="{{ $child->id }}" selected="selected">{{ $child->name }} (${{ number_format($child->price, 2) }})</option> 
+                        <option value="{{ $child->id }}" selected="selected">{{ $child->name }} <!-- (${{ number_format($child->price, 2) }})--></option> 
                     @else
-                        <option value="{{ $child->id }}">{{ $child->name }} (${{ number_format($child->price, 2) }})</option> 
+                        <option value="{{ $child->id }}">{{ $child->name }} <!-- (${{ number_format($child->price, 2) }})--></option> 
                     @endif
 
                 @endforeach
@@ -24,6 +24,5 @@
             {{ $errors->first('category_id') }}
         </span>
     @endif
-
 
 </div>

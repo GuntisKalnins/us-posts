@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-default">Send</button>
+                            <button type="submit" class="btn btn-primary">Send</button>
                         </div>
                         {{ csrf_field() }}
                     </form>

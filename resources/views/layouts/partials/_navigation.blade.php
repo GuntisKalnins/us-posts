@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-link"><a href="{{ route('category.index', [$area]) }}">Categories</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ route('category.index', [$area]) }}">Categories</a></li>
         </ul>
 
         <!-- Right Side Of Navbar -->
@@ -26,16 +26,16 @@
         @endif
     @else
     
-        <li class="nav-link"><a href="{{ route('listings.viewed.index', [$area]) }}">Recently viewed</a></li>
-        <li class="nav-link"><a href="{{ route('listings.create', [$area]) }}">New listing</a></li>
-        <li class="nav-link"><a href="{{ route('listings.favourites.index', [$area]) }}">Favourites</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.viewed.index', [$area]) }}">Recently viewed</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.create', [$area]) }}">New listing</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.favourites.index', [$area]) }}">Favourites</a></li>
 
 
-        <li class="nav-link"><a href="{{ route('listings.published.index', [$area]) }}">Published</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.published.index', [$area]) }}">Published</a></li>
 
 
 
-        <li class="nav-item dropdown">
+        <li class="nav-item active dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
         {{ Auth::user()->name }} <span class="caret"></span>
             </a>

@@ -9,7 +9,7 @@
                 <div class="card-body">
                     @if($listing->cost() == 0)
                         <form action="{{ route('listings.payment.update', [$area, $listing]) }}" method="post">
-                            <p>There is nothing for you to pay.</p>
+                            <p>Press complete to publish your listing.</p>
                             <button type="submit" class="btn btn-primary">Complete</button>
 
                             {{ csrf_field() }}

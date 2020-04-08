@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-7 mb-4">
             <div class="card">
                 <div class="card-header">Create listing</div>
                 <div class="card-body">
@@ -33,8 +33,8 @@
                                 </span>
                             @endif
 
-                        <div class="fomr-group">
-                            <button type="submit" class="btn btn-default">Save</button>                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Save</button>                        
                         </div>
 
                         {{ csrf_field() }}
