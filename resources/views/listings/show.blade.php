@@ -47,7 +47,7 @@
                         <p><a href="/register">Sign up</a> for an account or <a href="/login">sign in</a> to contact listing owners.</p>     
                     @else
                         <form action="{{ route('listings.contact.store', [$area, $listing]) }}" method="post">
-                            <div class="form-group }}">
+                            <div class="form-group">
                                 <label for="message">Message</label>
                                 <textarea name="message" id="message" cols="30" rows="5" class="form-control"></textarea>
 
