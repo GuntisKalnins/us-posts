@@ -9,7 +9,7 @@
             @include('layouts.partials._navigation')
             
             <main class="mt-5">
-                <div class="container">
+                <div class="container-fluid">
                     @include('layouts.partials._alerts')
                     @yield('content')
                 </div>
