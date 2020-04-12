@@ -4,13 +4,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Pay for listing</div>
+                <h2 class="card-header">Congratulations</h2>
 
                 <div class="card-body">
                     @if($listing->cost() == 0)
                         <form action="{{ route('listings.payment.update', [$area, $listing]) }}" method="post">
-                            <p>Press complete to publish your listing.</p>
-                            <button type="submit" class="btn btn-primary">Complete</button>
+                            <p>Your listing is now live</p>
+                            <button type="submit" class="btn btn-primary">Continue</button>
 
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}

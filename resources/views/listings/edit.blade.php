@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Continue editing listing</div>
+                <h2 class="card-header">Add picture</h2>
                     @if ($listing->live())
                         <span class="pull-right"><a href="{{ route('listings.show', [$area, $listing]) }}">Go to listing</a></span>
                     @endif
@@ -14,9 +14,9 @@
                         @include('listings.partials.forms._areas')
                         @include('listings.partials.forms._categories')
 
-                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('title') ? ' text-danger' : '' }}">
                             <label for="title" class="control-label">Title</label>
-                            <input type="text" name="title" id="title" class="form-control" value="{{ $listing->title }}">
+                            <input type="text" name="title" id="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" value="{{ $listing->title }}">
                         </div>
                         
                             @if ($errors->has('title'))
@@ -25,9 +25,9 @@
                                 </span>
                             @endif
 
-                        <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('body') ? ' text-danger' : '' }}">
                             <label for="body" class="control-label">Body</label>
-                            <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control">{{ $listing->body }}</textarea>
+                            <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}">{{ $listing->body }}</textarea>
                         </div>
 
                             @if ($errors->has('body'))
@@ -37,8 +37,6 @@
                             @endif
 
                         <div class="form-group clearfix">
-                            <button type="submit" class="btn btn-primary">Save</button>
-
                             @if(!$listing->live())
                                 <button type="submit" name="payment" value="true" class="btn btn-primary">Confirm</button>
                             @endif    

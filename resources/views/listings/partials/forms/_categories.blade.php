@@ -1,5 +1,5 @@
-<div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
-    <label for="category" class="control-label">Category</label>
+<div class="form-group{{ $errors->has('category_id') ? ' text-danger' : '' }}">
+    <label for="category" class="control-label">Category:</label>
     <select name="category_id" id="category" class="form-control select2" {{ isset($listing) && $listing->live() ? ' disabled="disabled"' : '' }}>
 
         @foreach ($categories as $category)

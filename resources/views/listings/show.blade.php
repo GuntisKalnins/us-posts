@@ -1,27 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <div class="row card">
-
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+        
         @if (Auth::check())
-            <div class="col-lg-4 col-md-12 mb-4">
-                <div class="panel panel-default">
-                    <div class="card-body">
-                        <nav class="nav">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></li>
+            <div class="card-body">
+                <nav class="nav">
+                    <li class="nav-item"><a class="nav-link pl-0" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></li>
 
-                            @if (!$listing->favouritedBy(Auth::user()))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favorites</a>
-                                    <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="post" id="listings-favourite-form" class="hidden">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            @endif
-                        </nav>
-                    </div>
-                </div>
+                    @if (!$listing->favouritedBy(Auth::user()))
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favorites</a>
+                            <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="post" id="listings-favourite-form" class="hidden">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    @endif
+                </nav>
             </div>
         @endif
 
@@ -49,7 +46,7 @@
                         <form action="{{ route('listings.contact.store', [$area, $listing]) }}" method="post">
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea name="message" id="message" cols="30" rows="5" class="form-control"></textarea>
+                                <textarea name="message" id="message" cols="30" rows="5" class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}"></textarea>
 
                                 @if ($errors->has('message'))
                                     <span class="help-block">
@@ -71,5 +68,6 @@
             </div>                                        
         </div>
     </div>
-
+    </div>
+    </div>
 @endsection

@@ -10,9 +10,9 @@
 
                     <form action="{{ route('listings.share.store', [$area, $listing]) }}" method="post">
                         @foreach(range(0, 4) as $n)
-                        <div class="form-group{{ $errors->has('emails.' . $n) ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('emails.' . $n) ? ' text-danger' : '' }}">
                             <label for="emails.{{ $n }}">Email:</label>
-                            <input type="text" name="emails[]" id="emails.{{ $n }}" class="form-control" placeholder="address" value="{{ old('emails' . $n) }}">
+                            <input type="text" name="emails[]" id="emails.{{ $n }}" class="form-control{{ $errors->has('emails.' . $n) ? ' is-invalid' : '' }}" placeholder="address" value="{{ old('emails' . $n) }}">
 
                             @if ($errors->has('emails.' . $n))
                                 <span class="help-block">
@@ -22,7 +22,7 @@
                         </div>
                         @endforeach   
 
-                        <div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('message') ? ' text-danger' : '' }}">
                             <label for="message">Message (optional)</label>
                             <textarea name="message" id="message" cols="30" rows="5" class="form-control"></textarea>
                             @if ($errors->has('message'))

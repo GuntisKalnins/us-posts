@@ -4,16 +4,16 @@
     <div class="row justify-content-center">
         <div class="col-md-7 mb-4">
             <div class="card">
-                <div class="card-header">Create listing</div>
+                <h2 class="card-header">Create listing</h2>
                 <div class="card-body">
 
                     <form action="{{ route('listings.store', [$area]) }}" method="post">
                         @include('listings.partials.forms._areas')
                         @include('listings.partials.forms._categories')
 
-                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('title') ? ' text-danger' : '' }}">
                             <label for="title" class="control-label">Title</label>
-                            <input type="text" name="title" id="title" class="form-control">
+                            <input type="text" name="title" id="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}">
                         </div>
                         
                             @if ($errors->has('title'))
@@ -22,9 +22,9 @@
                                 </span>
                             @endif
 
-                        <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('body') ? ' text-danger' : '' }}">
                             <label for="body" class="control-label">Body</label>
-                            <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control"></textarea>
+                            <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}"></textarea>
                         </div>
 
                             @if ($errors->has('body'))
@@ -34,7 +34,7 @@
                             @endif
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Save</button>                        
+                            <button type="submit" class="btn btn-primary">Continue</button>                        
                         </div>
 
                         {{ csrf_field() }}

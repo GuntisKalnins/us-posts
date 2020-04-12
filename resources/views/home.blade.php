@@ -8,7 +8,7 @@
         <div class="row">
 
             @foreach($areas as $country)
-                <div class="card-body">
+                <div class="card-body col-md-6">
                     <h3 class="card-title"><a class="text-dark" href="{{ route('user.area.store', $country) }}">{{ $country->name }}</a></h3>
                     <hr>
                     @foreach ($country->children as $state)
