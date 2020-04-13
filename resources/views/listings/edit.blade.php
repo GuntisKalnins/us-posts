@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <h2 class="card-header">Add picture</h2>
+                <h2 class="card-header">Add your image</h2>
                     @if ($listing->live())
                         <span class="pull-right"><a href="{{ route('listings.show', [$area, $listing]) }}">Go to listing</a></span>
                     @endif
