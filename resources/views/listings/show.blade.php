@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="card shadow-sm">
-    <div class="card-body">
-        <div class="row">
+<div class="row justify-content-centerx">
+    <div class="card mt-5 shadow-sm">
+        <div class="card-body">
             <div class="{{ Auth::check() ? 'col-md-9' : 'col-md-12' }}">
                 <div class="card-heading">
                     <h4>{{ $listing->title }} in <span class="text-muted">{{ $listing->area->name }}</span></h4>
@@ -15,7 +15,7 @@
 
                                 @if (!$listing->favouritedBy(Auth::user()))
                                     <li class="nav-item">
-                                        <a class="nav-link pl-0" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favorites</a>
+                                        <a class="nav-link pl-0" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favourites</a>
                                         <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="post" id="listings-favourite-form" class="hidden">
                                             {{ csrf_field() }}
                                         </form>

@@ -8,7 +8,7 @@
         <div id="app">
             @include('layouts.partials._navigation')
             
-            <main class="mt-5">
+            <main class="mt-6">
                 <div class="container-fluid">
                     @include('layouts.partials._alerts')
                     @yield('content')

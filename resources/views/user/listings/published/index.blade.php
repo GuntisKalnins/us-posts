@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
+<div class="card shadow-sm">
+    <h3 class="card-header bg-secondary text-white">My listings</h3>
     <div class="row">
-        <div class="card-body">
-            <h3 class="card-header">My listings</h3>
-            <div class="card-body">
+            
+            <div class="card-body ml-3">
                 @if ($listings->count())
                 
                     @each ('listings.partials._listing_own', $listings, 'listing')

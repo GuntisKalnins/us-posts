@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark shadow-sm">
     <a class="navbar-brand" href="{{ url('/') }}">
         {{ config('app.name', 'Ader') }} ({{ $area->name }})
     </a>

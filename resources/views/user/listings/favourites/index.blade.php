@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
+<div class="card shadow-sm">
+    <h3 class="card-header bg-secondary text-white">Favourites</h3>
     <div class="row">
-        <div class="card-body">
-            <h3 class="card-header">Favourites</h3>
-            <div class="card-body">
+            
+            <div class="card-body ml-3">
             @if ($listings->count())
             
                 @foreach ($listings as $listing)
@@ -21,7 +21,6 @@
                 </div>
             @endif
             
-        </div>
     </div>
 </div>
 @endsection

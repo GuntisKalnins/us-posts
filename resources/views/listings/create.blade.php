@@ -3,8 +3,8 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-7 mb-4">
-            <div class="card shadow-sm">
-                <h2 class="card-header">Create listing</h2>
+            <div class="card mt-5 shadow-sm">
+                <h2 class="card-header bg-secondary text-white">Create listing</h2>
                 <div class="card-body">
 
                     <form action="{{ route('listings.store', [$area]) }}" method="post">
@@ -12,7 +12,7 @@
                         @include('listings.partials.forms._categories')
 
                         <div class="form-group{{ $errors->has('title') ? ' text-danger' : '' }}">
-                            <label for="title" class="control-label">Title</label>
+                            <label for="title" class="control-label">Title:</label>
                             <input type="text" name="title" id="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}">
                         </div>
                         
@@ -23,7 +23,7 @@
                             @endif
 
                         <div class="form-group{{ $errors->has('body') ? ' text-danger' : '' }}">
-                            <label for="body" class="control-label">Body</label>
+                            <label for="body" class="control-label">Description:</label>
                             <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}"></textarea>
                         </div>
 
