@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-7 mb-4">
-            <div class="card">
+            <div class="card shadow-sm">
                 <h2 class="card-header">Create listing</h2>
                 <div class="card-body">
 

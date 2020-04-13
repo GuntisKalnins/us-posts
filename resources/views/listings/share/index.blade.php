@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-header">Share listing <em>{{ $listing->title }}</em></div>
                 <div class="card-body">
                     <p>Share this listing with up to 5 people</p>

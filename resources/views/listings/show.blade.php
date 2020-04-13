@@ -1,45 +1,39 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="card">
+<div class="card shadow-sm">
     <div class="card-body">
         <div class="row">
-        
-        @if (Auth::check())
-            <div class="card-body">
-                <nav class="nav">
-                    <li class="nav-item"><a class="nav-link pl-0" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></li>
-
-                    @if (!$listing->favouritedBy(Auth::user()))
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favorites</a>
-                            <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="post" id="listings-favourite-form" class="hidden">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    @endif
-                </nav>
-            </div>
-        @endif
-
-        <div class="{{ Auth::check() ? 'col-md-9' : 'col-md-12' }}">
-            <div class="panel panle-default">
-                <div class="panel-heading">
-                    <h4>{{ $listing->title }} in <span class="text-muted">{{ $listing->area->name }}</span></h4> 
+            <div class="{{ Auth::check() ? 'col-md-9' : 'col-md-12' }}">
+                <div class="card-heading">
+                    <h4>{{ $listing->title }} in <span class="text-muted">{{ $listing->area->name }}</span></h4>
+                    <hr> 
                 </div>
-                <div class="panel-body">
+                    @if (Auth::check())
+                        <div class="card-body">
+                            <nav class="nav">
+                                <li class="nav-item"><a class="nav-link pl-0" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></li>
+
+                                @if (!$listing->favouritedBy(Auth::user()))
+                                    <li class="nav-item">
+                                        <a class="nav-link pl-0" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favorites</a>
+                                        <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="post" id="listings-favourite-form" class="hidden">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                @endif
+                            </nav>
+                        </div>
+                    @endif
+                <div class="card-body">
                     {!! nl2br(e($listing->body)) !!}
                     <hr>
                     <p>Viewed {{ $listing->views() }} times</p>
                 </div>
-            </div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Contact {{ $listing->user->name }}
+                <div class="card-heading">
+                    Contact <strong>{{ $listing->user->name }}</strong>
                 </div>
-                <div class="panel-body">
-
+                <div class="card-body">   
                     @if (Auth::guest())
                         <p><a href="/register">Sign up</a> for an account or <a href="/login">sign in</a> to contact listing owners.</p>     
                     @else
@@ -64,10 +58,9 @@
                             {{ csrf_field() }}
                         </form>
                     @endif
-                </div>
-            </div>                                        
+                </div> 
+            </div>
         </div>
     </div>
-    </div>
-    </div>
+</div>
 @endsection

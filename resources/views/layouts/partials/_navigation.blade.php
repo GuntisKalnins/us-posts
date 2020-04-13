@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-white shadow-sm">
     <a class="navbar-brand" href="{{ url('/') }}">
         {{ config('app.name', 'Ader') }} ({{ $area->name }})
     </a>
@@ -25,13 +25,10 @@
             </li>
         @endif
     @else
-    
-        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.viewed.index', [$area]) }}">Recently viewed</a></li>
         <li class="nav-item active"><a class="nav-link" href="{{ route('listings.create', [$area]) }}">New listing</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.viewed.index', [$area]) }}">Recently viewed</a></li>
         <li class="nav-item active"><a class="nav-link" href="{{ route('listings.favourites.index', [$area]) }}">Favourites</a></li>
-
-
-        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.published.index', [$area]) }}">Published</a></li>
+        <li class="nav-item active"><a class="nav-link" href="{{ route('listings.published.index', [$area]) }}">My listings</a></li>
 
 
 

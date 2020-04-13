@@ -3,11 +3,13 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <h2 class="card-header">Add your image</h2>
-                    @if ($listing->live())
-                        <span class="pull-right"><a href="{{ route('listings.show', [$area, $listing]) }}">Go to listing</a></span>
-                    @endif
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h2>Edit / Add image</h2>
+                        @if ($listing->live())
+                            <a href="{{ route('listings.show', [$area, $listing]) }}">Go to listing</a>
+                        @endif
+                </div>
                 <div class="card-body">
 
                     <form action="{{ route('listings.update', [$area, $listing]) }}" method="post">

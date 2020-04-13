@@ -2,9 +2,11 @@
 
 @section('content')
 
-<div class="card">
-    
-    <h2 class="card-header">Showing all listings in {{ $area->name }}</h2>
+<div class="card shadow-sm">
+    <div class="card-header">
+        <h2 >Showing all listings in {{ $area->name }}</h2>
+        <a href="{{ route('listings.create', [$area]) }}">Add new listing</a>
+    </div>
     
     <div class="row">
         
@@ -25,7 +27,7 @@
                         <div class="card-body">
 
                             @foreach($category->children as $sub)
-                                <h5><a class="text-dark" href="{{ route('listings.index', [$area, $sub]) }}">{{ $sub->name }}</a> ({{ $sub->listings->count() }})</h5>
+                                <h6><a class="text-dark" href="{{ route('listings.index', [$area, $sub]) }}">{{ $sub->name }}</a> ({{ $sub->listings->count() }})</h6>
                                 <hr>
                             @endforeach
                             
