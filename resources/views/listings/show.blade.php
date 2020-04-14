@@ -1,39 +1,36 @@
 @extends('layouts.app')
 @section('content')
-<div class="row justify-content-centerx">
-    <div class="card mt-5 shadow-sm">
-        <div class="card-body">
-            <div class="{{ Auth::check() ? 'col-md-9' : 'col-md-12' }}">
-                <div class="card-heading">
-                    <h4>{{ $listing->title }} in <span class="text-muted">{{ $listing->area->name }}</span></h4>
-                    <hr> 
-                </div>
+<div class="row justify-content-center">
+    <div class="col-md-7 mb-4">
+        <div class="card mt-3 shadow-sm">
+                <h2 class="card-header bg-secondary text-white">{{ $listing->title }} in {{ $listing->area->name }}</h2>
+                
                     @if (Auth::check())
-                        <div class="card-body">
-                            <nav class="nav">
-                                <li class="nav-item"><a class="nav-link pl-0" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></li>
+                        <nav class="nav justify-content-center">
+                            <li class="nav-item"><strong><a class="nav-link  text-dark" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></strong></li>
 
-                                @if (!$listing->favouritedBy(Auth::user()))
-                                    <li class="nav-item">
-                                        <a class="nav-link pl-0" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favourites</a>
-                                        <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="post" id="listings-favourite-form" class="hidden">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                @endif
-                            </nav>
-                        </div>
+                            @if (!$listing->favouritedBy(Auth::user()))
+                                <li class="nav-item">
+                                    <strong><a class="nav-link text-dark" href="#" onclick="event.preventDefault(); document.getElementById('listings-favourite-form').submit();">Add to favourites</a></strong>
+                                    <form action="{{ route('listings.favourites.store', [$area, $listing]) }}" method="post" id="listings-favourite-form" class="hidden">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            @endif
+                        </nav>
                     @endif
-                <div class="card-body">
+                
+                <div class="card-body pt-0">
+                <hr>
+                    <p class="text-secondary">Description:</p>
                     {!! nl2br(e($listing->body)) !!}
                     <hr>
                     <p>Viewed {{ $listing->views() }} times</p>
                 </div>
 
-                <div class="card-heading">
+
+                <div class="card-body">
                     Contact <strong>{{ $listing->user->name }}</strong>
-                </div>
-                <div class="card-body">   
                     @if (Auth::guest())
                         <p><a href="/register">Sign up</a> for an account or <a href="/login">sign in</a> to contact listing owners.</p>     
                     @else
@@ -51,15 +48,15 @@
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Send</button>
-                                <span class="help-block">
-                                    This will email <strong>{{ $listing->user->name }}</strong> and they will be able to reply directly to you by email.
+                                <span class="help-block pl-2">
+                                    This will send email <strong>{{ $listing->user->name }}</strong> and they will be able to reply directly to you by email.
                                 </span>
                             </div>
                             {{ csrf_field() }}
                         </form>
                     @endif
                 </div> 
-            </div>
+           
         </div>
     </div>
 </div>

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-sm">
-                <div class="card-header">Share listing <em>{{ $listing->title }}</em></div>
+<div class="row justify-content-center">
+    <div class="col-md-7 mb-4">
+        <div class="card mt-3 shadow-sm">
+                <h2 class="card-header bg-secondary text-white">Share listing <em>{{ $listing->title }}</em></h2>
                 <div class="card-body">
                     <p>Share this listing with up to 5 people</p>
 

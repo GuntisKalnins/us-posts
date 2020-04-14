@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="card shadow-sm">
-    <div class="card-header">
-        <h2 >Showing all listings in {{ $area->name }}</h2>
-        <a href="{{ route('listings.create', [$area]) }}">Add new listing</a>
+<div class="card mt-3 shadow-sm">
+    <div class="card-header bg-secondary text-white">
+        <h2>Listings in {{ $area->name }}</h2>
+        <a class="text-white" href="{{ route('listings.create', [$area]) }}">Add new listing</a>
     </div>
     
     <div class="row">

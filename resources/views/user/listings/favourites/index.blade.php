@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card shadow-sm">
+<div class="card mt-3 shadow-sm">
     <h3 class="card-header bg-secondary text-white">Favourites</h3>
     <div class="row">
             

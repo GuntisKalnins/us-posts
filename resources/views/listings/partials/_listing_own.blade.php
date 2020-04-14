@@ -19,6 +19,7 @@
             <li><a href="#" onclick="event.preventDefault(); document.getElementById('listings-destroy-form-{{ $listing->id }}').submit()">Remove</a></li>
             <li><a href="{{ route('listings.edit', [$area, $listing]) }}">Edit</a></li>
         </ul>
+        <hr>
 
     </div>
 </div>
