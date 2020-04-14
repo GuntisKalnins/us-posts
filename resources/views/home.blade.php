@@ -1,46 +1,53 @@
+
 @extends('layouts.app')
-
 @section('content')
-
-
 <div class="card mt-3 shadow-sm">
-    <div class="card-body">
+    <div class="bg-secondary text-white">
         <div class="row">
 
             @foreach($areas as $country)
-                <div class="card-body col-md-6">
-                    <h3 class="card-title"><a class="text-dark" href="{{ route('user.area.store', $country) }}">{{ $country->name }}</a></h3>
-                    <hr>
-                    @foreach ($country->children as $state)
-                        <div id="accordion">
-                            <div class="card-header" id="heading{{ $state->id }}">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#collapse{{ $state->id }}" aria-expanded="true" aria-controls="collapse{{ $state->id }}">
-                                        {{ $state->name }}
-                                    </button>
-                                    <p class="d-inline"><small><a class="text-secondary" href="{{ route('user.area.store', $state) }}">(show all)</a></small></p>
-                                </h5>
-                            </div>
+                <div class="col-md-6 bg-light" id="accordion">
+                    <div class="card-header bg-secondary" id="heading{{ $country->id }}">
+                        <div class="mb-0 text-center">
+                            <button class="btn btn-link text-white pb-0" data-toggle="collapse" data-target="#collapse{{ $country->id }}" aria-expanded="true" aria-controls="collapse{{ $country->id }}">
+                                <h3 class="mb-0">{{ $country->name }}</h3>
+                            </button>
+                            <p><a class="text-white" href="{{ route('user.area.store', $country) }}"></a>(show all)</p>
+                        </div>
+                    </div>
 
-                            <div id="collapse{{ $state->id }}" class="collapse hide" aria-labelledby="heading{{ $state->id }}" data-parent="#accordion">
-                                <div class="card-body">
+                        <div id="collapse{{ $country->id }}" class="collapse hide" aria-labelledby="heading{{ $country->id }}" data-parent="#accordion">
+                            <div class="card-body bg-light">
+                            <hr>
+                            @foreach ($country->children as $state)
+                                <div id="accordion-2">
+                                    <div class="card-header" id="heading{{ $state->id }}">
+                                        <div class="mb-0 text-center">
+                                            <button class="btn btn-link text-dark pb-0" data-toggle="collapse" data-target="#collapse{{ $state->id }}" aria-expanded="true" aria-controls="collapse{{ $state->id }}">
+                                                <h4 class="mb-0">{{ $state->name }}</h4>
+                                            </button>
+                                            <p><a class="text-dark" href="{{ route('user.area.store', $state) }}">(show all)</a></p>
+                                        </div>
+                                    </div>
 
-                                    @foreach ($state->children as $city)
-                                        <p><a class="text-dark" href="{{ route('user.area.store', $city) }}">{{ $city->name }}</a></p>
-                                        <hr>
-                                    @endforeach
-                                    
+                                    <div id="collapse{{ $state->id }}" class="collapse hide" aria-labelledby="heading{{ $state->id }}" data-parent="#accordion-2">
+                                        <div class="card-body">
+
+                                            @foreach ($state->children as $city)
+                                                <p class="text-center"><a class="text-dark" href="{{ route('user.area.store', $city) }}">{{ $city->name }}</a></p>
+                                                <hr>
+                                            @endforeach
+                                            
+                                        </div>
+                                    </div>
                                 </div>
+                            @endforeach
                             </div>
                         </div>
-                    @endforeach
-
                 </div>
+
             @endforeach
         </div>
     </div>
 </div>
-
-
-
 @endsection
