@@ -12,7 +12,7 @@
                             <button class="btn btn-link text-white pb-0" data-toggle="collapse" data-target="#collapse{{ $country->id }}" aria-expanded="true" aria-controls="collapse{{ $country->id }}">
                                 <h3 class="mb-0">{{ $country->name }}</h3>
                             </button>
-                            <p><a class="text-white" href="{{ route('user.area.store', $country) }}"></a>(show all)</p>
+                            <p><a class="text-white" href="{{ route('user.area.store', $country) }}">(show all)</a></p>
                         </div>
                     </div>
 
