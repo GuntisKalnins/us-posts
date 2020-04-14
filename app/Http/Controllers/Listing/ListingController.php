@@ -72,6 +72,10 @@ class ListingController extends Controller
 
         $listing->title = $request->title;
         $listing->body = $request->body;
+        
+
+        $listing->image = $request->image->store('uploads', 'public');
+
 
         if (!$listing->live()) {
             $listing->category_id = $request->category_id;

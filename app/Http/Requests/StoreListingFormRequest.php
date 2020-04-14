@@ -23,9 +23,15 @@ class StoreListingFormRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
             'title' => 'required|max:255',
             'body' => 'required|max:2000',
+            'image' => 'file|image|max:5000',
+                    
+            
+
+            
             'category_id' => [
                 'required',
                 \Illuminate\Validation\Rule::exists('categories', 'id')->where(function ($query) {

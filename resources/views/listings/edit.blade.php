@@ -11,12 +11,12 @@
             
             <div class="card-body">
 
-                <form action="{{ route('listings.update', [$area, $listing]) }}" method="post">
+                <form action="{{ route('listings.update', [$area, $listing]) }}" method="post" enctype="multipart/form-data">
                     @include('listings.partials.forms._areas')
                     @include('listings.partials.forms._categories')
 
                     <div class="form-group{{ $errors->has('title') ? ' text-danger' : '' }}">
-                        <label for="title" class="control-label">Title:</label>
+                        <label for="title" class="control-label"><strong>Title:</strong></label>
                         <input type="text" name="title" id="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" value="{{ $listing->title }}">
                     </div>
                     
@@ -27,7 +27,7 @@
                         @endif
 
                     <div class="form-group{{ $errors->has('body') ? ' text-danger' : '' }}">
-                        <label for="body" class="control-label">Description:</label>
+                        <label for="body" class="control-label"><strong>Description:</strong></label>
                         <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}">{{ $listing->body }}</textarea>
                     </div>
 
@@ -36,6 +36,16 @@
                                 {{ $errors->first('body') }}
                             </span>
                         @endif
+
+                    <div class="form-group">
+                        <label for="image" class="pr-2"><strong>Image:</strong></label>
+                        <input type="file" name="image" id="image">
+                    </div>
+                        @if ($errors->has('image'))
+                            <span class="help-block">
+                                {{ $errors->first('body') }}
+                            </span>
+                        @endif    
 
                     <div class="form-group clearfix">
                         <button type="submit" name="payment" value="true" class="btn btn-primary">Confirm</button>

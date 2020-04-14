@@ -30,6 +30,14 @@
 
 
                 <div class="card-body">
+
+                @if( $listing->image )
+                    <div>
+                        <img src="{{ asset('storage/'.$listing->image) }}" alt="listing-picture" class="img-thumbnail">
+                    </div>
+                @endif
+
+
                     Contact <strong>{{ $listing->user->name }}</strong>
                     @if (Auth::guest())
                         <p><a href="/register">Sign up</a> for an account or <a href="/login">sign in</a> to contact listing owners.</p>     
