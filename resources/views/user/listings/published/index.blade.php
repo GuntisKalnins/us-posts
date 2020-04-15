@@ -5,7 +5,7 @@
     <h3 class="card-header bg-secondary text-white">My listings</h3>
     <div class="row">
             
-            <div class="card-body ml-3">
+            <div class="card-body">
                 @if ($listings->count())
                 
                     @each ('listings.partials._listing_own', $listings, 'listing')

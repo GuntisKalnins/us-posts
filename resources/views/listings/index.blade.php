@@ -3,6 +3,7 @@
 @section('content')
 <div class="card mt-3 shadow-sm">
     <div class="card-header">
+
             <h4>{{ $category->parent->name }} &nbsp; > &nbsp; {{ $category->name }}</h4>
             <hr>
 

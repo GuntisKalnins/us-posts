@@ -24,6 +24,13 @@
                 <hr>
                     <p class="text-secondary">Description:</p>
                     {!! nl2br(e($listing->body)) !!}
+                    
+                    @if( $listing->image )
+                        <div>
+                            <img src="{{ asset('storage/'.$listing->image) }}" alt="listing-picture" class="img-thumbnail mt-4">
+                        </div>
+                    @endif
+
                     <hr>
                     <p>Viewed {{ $listing->views() }} times</p>
                 </div>
@@ -31,11 +38,7 @@
 
                 <div class="card-body">
 
-                @if( $listing->image )
-                    <div>
-                        <img src="{{ asset('storage/'.$listing->image) }}" alt="listing-picture" class="img-thumbnail">
-                    </div>
-                @endif
+                
 
 
                     Contact <strong>{{ $listing->user->name }}</strong>
