@@ -1,6 +1,6 @@
 <div class="media">
     <div class="media-body m-2">
-            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-responsive img-thumbnail mb-3" width="300">
+            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-responsive img-thumbnail mb-3" width="250">
         <h5>
             <strong><a href="{{ route('listings.show', [$area, $listing]) }}">{{ $listing->title }}</a></strong>
             in {{ $listing->area->name }}

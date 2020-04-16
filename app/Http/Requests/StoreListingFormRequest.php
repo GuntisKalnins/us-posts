@@ -26,7 +26,7 @@ class StoreListingFormRequest extends FormRequest
         
         return [
             'title' => 'required|max:255',
-            'body' => 'required|max:2000',
+            'body' => 'required|max:5000',
             'image' => 'sometimes|file|image|max:5000',            
             
 

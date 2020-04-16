@@ -27,7 +27,7 @@
                     {!! nl2br(e($listing->body)) !!}
                     
                         <div>
-                            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-fluid img-thumbnail mt-4">
+                            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-fluid img-thumbnail mt-4" width="250">
                         </div>
 
                     <hr>
