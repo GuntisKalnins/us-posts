@@ -18,6 +18,7 @@
                     <div class="form-group{{ $errors->has('title') ? ' text-danger' : '' }}">
                         <label for="title" class="control-label"><strong>Title:</strong></label>
                         <input type="text" name="title" id="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" value="{{ $listing->title }}">
+                        <span class="text-secondary"> (max: 255)</span>
                     </div>
                     
                         @if ($errors->has('title'))
@@ -29,6 +30,7 @@
                     <div class="form-group{{ $errors->has('body') ? ' text-danger' : '' }}">
                         <label for="body" class="control-label"><strong>Description:</strong></label>
                         <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}">{{ $listing->body }}</textarea>
+                        <span class="text-secondary"> (max: 2000)</span>
                     </div>
 
                         @if ($errors->has('body'))
@@ -38,7 +40,7 @@
                         @endif
 
                     <div class="form-group">
-                        <label for="image" class="pr-2"><strong>Image:</strong></label>
+                        <label for="image" class="pr-2"><strong>Image:</strong><span class="text-secondary pb-3"> (max: 5MB)</span></label>
                         <input type="file" name="image" id="image">
                     </div>
                         @if ($errors->has('image'))

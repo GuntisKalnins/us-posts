@@ -6,7 +6,7 @@
     <div class="row">
             
         <div class="card-body">
-            <p>Showing your last {{ $indexLimit }} viewed listings.</p>
+            <p class="m-2">Showing your last {{ $indexLimit }} viewed listings.</p>
             @if ($listings->count())
                 @foreach ($listings as $listing)
                     @include ('listings.partials._listing', compact('listing'))
@@ -15,7 +15,7 @@
             
             @else
             <div class="card-body">
-                <p>You have no viewed listings.</p>
+                <p class="m-2">You have no viewed listings.</p>
             </div>    
             @endif
         

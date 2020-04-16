@@ -2,26 +2,24 @@
 
 @section('content')
 <div class="card mt-3 shadow-sm">
-    <div class="card-header">
+    <h3 class="card-header bg-secondary text-white">{{ $category->parent->name }} &nbsp; > &nbsp; {{ $category->name }}</h3>
+    <a class="text-dark m-2" href="{{ route('listings.create', [$area]) }}"><strong>Add new listing</strong></a>
+    <div class="row">
+        <hr>
+        <div class="card-body">
 
-            <h4>{{ $category->parent->name }} &nbsp; > &nbsp; {{ $category->name }}</h4>
-            <a class="text-dark" href="{{ route('listings.create', [$area]) }}">Add new listing</a>
+        @if ($listings->count())
 
-            <hr>
+            @foreach ($listings as $listing)
+                @include ('listings.partials._listing', compact('listing'))
+            @endforeach
 
+        {{ $listings->links() }}
 
-            @if ($listings->count())
-
-                @foreach ($listings as $listing)
-                    @include ('listings.partials._listing', compact('listing'))
-                @endforeach
-
-            {{ $listings->links() }}
-
-            @else
-                <p>No listings found.</p>
-            @endif
-
+        @else
+            <p class="m-2">No listings found.</p>
+        @endif
+        </div>
     </div>
 </div>
 @endsection

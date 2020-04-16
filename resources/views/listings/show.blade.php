@@ -7,7 +7,6 @@
                 
                     @if (Auth::check())
                         <nav class="nav justify-content-center">
-                            <li class="nav-item"><strong><a class="nav-link  text-dark" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></strong></li>
 
                             @if (!$listing->favouritedBy(Auth::user()))
                                 <li class="nav-item">
@@ -17,6 +16,8 @@
                                     </form>
                                 </li>
                             @endif
+
+                            <li class="nav-item"><strong><a class="nav-link text-dark" href="{{ route('listings.share.index', [$area, $listing]) }}">Email to a friend</a></strong></li>
                         </nav>
                     @endif
                 
@@ -26,7 +27,7 @@
                     {!! nl2br(e($listing->body)) !!}
                     
                         <div>
-                            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-thumbnail mt-4">
+                            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-fluid img-thumbnail mt-4">
                         </div>
 
                     <hr>

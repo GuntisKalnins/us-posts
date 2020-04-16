@@ -14,6 +14,7 @@
                         <div class="form-group{{ $errors->has('title') ? ' text-danger' : '' }}">
                             <label for="title" class="control-label"><strong>Title:</strong></label>
                             <input type="text" name="title" id="title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}">
+                            <span class="text-secondary"> (max: 255)</span>
                         </div>
                         
                             @if ($errors->has('title'))
@@ -23,8 +24,9 @@
                             @endif
 
                         <div class="form-group{{ $errors->has('body') ? ' text-danger' : '' }}">
-                            <label for="body" class="control-label"><strong>Description:</strong></label>
+                            <label for="body" class="control-label"><strong>Description:</strong></span></label>
                             <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}"></textarea>
+                            <span class="text-secondary"> (max: 2000) 
                         </div>
 
                             @if ($errors->has('body'))
