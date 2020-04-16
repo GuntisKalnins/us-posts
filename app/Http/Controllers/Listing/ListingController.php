@@ -73,8 +73,10 @@ class ListingController extends Controller
         $listing->title = $request->title;
         $listing->body = $request->body;
         
-        //try to add if heres
-        $listing->image = $request->image->store('uploads', 'public');
+        if($request->hasFile('image')) {
+            $listing->image = $request->image->store('uploads', 'public');
+        }
+        
 
 
         if (!$listing->live()) {

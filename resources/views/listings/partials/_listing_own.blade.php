@@ -1,8 +1,6 @@
 <div class="media">
     <div class="media-body m-2">
-            @if( $listing->image )
-                <img src="{{ asset('storage/'.$listing->image) }}" alt="listing-picture" class="img-responsive img-thumbnail mb-3" width="300">
-            @endif
+            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-responsive img-thumbnail mb-3" width="300">
         <h5>
             
             <strong>

@@ -25,11 +25,9 @@
                     <p class="text-secondary">Description:</p>
                     {!! nl2br(e($listing->body)) !!}
                     
-                    @if( $listing->image )
                         <div>
-                            <img src="{{ asset('storage/'.$listing->image) }}" alt="listing-picture" class="img-thumbnail mt-4">
+                            <img src="{{ asset($listing->listingImage()) }}" alt="listing-picture" class="img-thumbnail mt-4">
                         </div>
-                    @endif
 
                     <hr>
                     <p>Viewed {{ $listing->views() }} times</p>

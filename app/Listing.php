@@ -38,6 +38,12 @@ class Listing extends Model
         ));
     }
 
+    public function listingImage()
+    {
+        $imgPath = ($this->image) ?  $this->image : 'uploads/1d0131yGCLKSm9JbThnXLPTUDCPBTeJtpDwvoLuY.png';
+        return '/storage/' . $imgPath;
+    }
+
 
     public function live()
     {
@@ -96,5 +102,7 @@ class Listing extends Model
     {
         return array_sum($this->viewedUsers->pluck('pivot.count')->toArray());
     }
+
+    
 
 }
