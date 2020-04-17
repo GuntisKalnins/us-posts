@@ -1,6 +1,6 @@
 <div class="form-group{{ $errors->has('category_id') ? ' text-danger' : '' }}">
     <label for="category" class="control-label"><strong>Category:</strong></label>
-    <select name="category_id" id="category" class="form-control select2" {{ isset($listing) && $listing->live() ? ' disabled="disabled"' : '' }}>
+    <select name="category_id" id="category" class="form-control e1" {{ isset($listing) && $listing->live() ? ' disabled="disabled"' : '' }}>
 
         @foreach ($categories as $category)
             <optgroup label="{{ $category->name }}">

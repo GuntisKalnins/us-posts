@@ -21,7 +21,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('.select2').select2();
+        $(document).ready(function() { $(".e1").select2(); });
     });
 </script>
     </body>
