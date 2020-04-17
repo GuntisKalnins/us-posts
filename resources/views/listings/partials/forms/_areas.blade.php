@@ -4,7 +4,7 @@
 
         @foreach ($areas as $country)
             <optgroup label="{{ $country->name }}">
-
+            
                 @foreach ($country->children as $state)
                     <optgroup label="{{ $state->name }}">
 
