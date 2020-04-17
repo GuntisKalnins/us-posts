@@ -26,7 +26,7 @@
                         <div class="form-group{{ $errors->has('body') ? ' text-danger' : '' }}">
                             <label for="body" class="control-label"><strong>Description:</strong></span></label>
                             <textarea type="text" name="body" id="body" cols="30" rows="8" class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}"></textarea>
-                            <span class="text-secondary"> (max: 5000 characters) 
+                            <span class="text-secondary"> (max: 5000 characters)</span>
                         </div>
 
                             @if ($errors->has('body'))
