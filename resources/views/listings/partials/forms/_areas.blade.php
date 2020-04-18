@@ -1,5 +1,5 @@
 <div class="form-group{{ $errors->has('area_id') ? ' text-danger' : '' }}">
-    <label for="area" class="control-label"><strong>Area:</strong></label>
+    <label for="area" class="control-label"><strong>County:</strong></label>
     <select name="area_id" id="area" class="form-control e1" searchable="Search here..">
 
         @foreach ($areas as $country)

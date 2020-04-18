@@ -1,6 +1,6 @@
-{{ $sender->name }} has shared a listing, <a href="{{ route('listings.show', [$listing->area, $listing]) }}">{{ $listing->title }}</a>.
-<br><br>
-
+<strong>{{ $sender->name }}</strong> has shared a listing, <a href="{{ route('listings.show', [$listing->area, $listing]) }}">{{ $listing->title }}</a>.
+<br>
+<br>
 @if ($body)
 ---
 <br>

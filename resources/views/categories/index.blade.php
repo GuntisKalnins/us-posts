@@ -2,16 +2,16 @@
 
 @section('content')
 
-<div class="card mt-3 shadow-sm">
+<div class="card mt-3 shadow-sm text-center">
     <div class="card-header bg-secondary text-white">
-        <h2>Listings in {{ $area->name }}</h2>
+        <h1>Listings in {{ $area->name }}</h1>
         <a class="text-white" href="{{ route('listings.create', [$area]) }}">Add new listing</a>
     </div>
     
     <div class="row">
         
         @foreach ($categories as $category)
-        <div class="col-md-6">
+        <div class="col-sm-6 col-lg-4">
             <div id="accordion">
                     <div class="card-header" id="heading{{ $category->id }}">
                         <div class="mb-0 text-center">
