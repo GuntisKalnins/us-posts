@@ -3,7 +3,7 @@
 @section('content')
 
 @foreach($areas as $country)
-<div class="card mt-3 shadow-sm text-center">
+<div class="card mt-3 shadow text-center">
     <div class="card-header bg-secondary text-white">
         <h1 class="mb-0">{{ $country->name }}</h1>
         <p><a class="text-white" href="{{ route('user.area.store', $country) }}">(show all)</a></p>
