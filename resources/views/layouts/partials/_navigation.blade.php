@@ -10,8 +10,10 @@
         <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="{{ route('category.index', [$area]) }}">Categories</a></li>
+            <li class="nav-item active"><a class="nav-link" href="#bottom">Donate</a></li>
         </ul>
-
+            
+        
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">
     <!-- Authentication Links -->
