@@ -41,7 +41,7 @@ class ListingContactCreated extends Mailable
     {
         return $this->view('email.listing.contact.message')
             ->subject("{$this->sender->name} sent a message about {$this->listing->title}")
-            ->from('hello@ader.com')
+            ->from('hello@us-posts.com')
             ->replyTo($this->sender->email);
     }
 }
