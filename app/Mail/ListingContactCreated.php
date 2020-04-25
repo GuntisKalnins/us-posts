@@ -13,9 +13,7 @@ class ListingContactCreated extends Mailable
     use Queueable, SerializesModels;
 
     public $listing;
-
     public $sender;
-
     public $body;
 
 
@@ -40,8 +38,8 @@ class ListingContactCreated extends Mailable
     public function build()
     {
         return $this->view('email.listing.contact.message')
-            ->subject("{$this->sender->name} sent a message about {$this->listing->title}")
-            ->from('hello@us-posts.com')
-            ->replyTo($this->sender->email);
+        ->subject("{$this->sender->name} sent a message about {$this->listing->title}")
+        ->from('hello@us-posts.com')
+        ->replyTo($this->sender->email);
     }
 }
