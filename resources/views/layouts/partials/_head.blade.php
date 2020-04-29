@@ -19,4 +19,4 @@
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link rel="shortcut icon" href="{{ asset('storage/app/public/uploads/logo.png') }}">
+<link rel="shortcut icon" href="{{ asset('/storage/app/public/uploads/logo.png') }}">
