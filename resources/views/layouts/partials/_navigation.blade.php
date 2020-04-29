@@ -9,14 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="{{ route('category.index', [$area]) }}">Categories</a></li>
 
-            <form class="align-self-center mt-2 pl-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <form class="align-self-left mt-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick" />
                 <input type="hidden" name="hosted_button_id" value="A2NXP8YEXG6EL" />
                 <input  type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                <img alt="" src="https://www.paypal.com/en_LV/i/scr/pixel.gif" width="1" height="1" />
             </form>
+            <li class="nav-item active"><a class="nav-link" href="{{ route('category.index', [$area]) }}">Categories</a></li>
         </ul>
             
         
