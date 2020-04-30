@@ -16,7 +16,7 @@
                     <div class="card-header" id="heading{{ $category->id }}">
                         <div class="mb-0 text-center">
                             <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#collapse{{ $category->id }}" aria-expanded="true" aria-controls="collapse{{ $category->id }}">
-                                <h4>{{ $category->name }}</h4>
+                                <span class="h4">{{ $category->name }}</span>
                             </button>
                             
                         </div>
