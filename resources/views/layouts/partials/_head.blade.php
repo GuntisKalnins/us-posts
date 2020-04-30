@@ -6,17 +6,16 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ config('app.name', 'Ader') }} - Post Free Classified Ads Online</title>
+<title>{{ config('app.name', 'US-Posts') }} - Post Free Classified Ads Online</title>
 
 <!-- Scripts -->
 
 
 <!-- Fonts -->
-
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="shortcut icon" href="{{ asset('/storage/uploads/logo.png') }}" type="image/x-icon">
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link rel="shortcut icon" href="{{ asset('./storage/app/public/uploads/logo.png') }}">

@@ -12,7 +12,7 @@
         
         @foreach ($categories as $category)
         <div class="col-sm-6 col-lg-4">
-            <div id="accordion">
+            <div id="accordion-{{ $category->id }}">
                     <div class="card-header" id="heading{{ $category->id }}">
                         <div class="mb-0 text-center">
                             <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#collapse{{ $category->id }}" aria-expanded="true" aria-controls="collapse{{ $category->id }}">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                    <div id="collapse{{ $category->id }}" class="collapse hide" aria-labelledby="heading{{ $category->id }}" data-parent="#accordion">
+                    <div id="collapse{{ $category->id }}" class="collapse hide" aria-labelledby="heading{{ $category->id }}" data-parent="#accordion-{{ $category->id }}">
                         <div class="card-body">
 
                             @foreach($category->children as $sub)
