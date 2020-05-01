@@ -40,7 +40,7 @@
                         @endif
 
                     <div class="form-group">
-                        <label for="image" class="pr-2"><strong>Image:</strong><span class="text-secondary pb-3"> (optional, max: 5mb)</span></label><br>
+                        <label for="image" class="pr-2"><strong>Image:</strong><span class="text-secondary pb-3"> (optional, max: 3mb)</span></label><br>
                         <input type="file" name="image" id="image">
                     </div>
                         @if ($errors->has('image'))
