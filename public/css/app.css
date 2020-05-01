@@ -73,6 +73,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f8fafc;
+  background: url(/storage/uploads/american-flag.jpg) no-repeat center center fixed;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4966,6 +4967,7 @@ input[type=button].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  opacity: 0.97;
 }
 
 .card > hr {

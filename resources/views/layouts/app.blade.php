@@ -13,9 +13,11 @@
                     @yield('content')
                 </div>
             </main>
+
             <footer class="mt-3">
                 @include('layouts.partials._footer')
             </footer>
+            
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>

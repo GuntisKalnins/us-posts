@@ -1,6 +1,8 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark shadow-sm">
     <a class="navbar-brand" href="{{ url('/') }}">
-        US Posts ({{ $area->name }})
+        <img src="/storage/uploads/logo.png" width="45" alt="brand-logo" class="d-inline-block align-middle">
+        <span class="d-inline-block align-middle">US Posts ({{ $area->name }})</span>
+        
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
         <span class="navbar-toggler-icon"></span>
@@ -8,7 +10,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Left Side Of Navbar -->
-            <form class="align-self-left mt-1" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <form class="d-inline-block align-middle align-self-left mt-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick" />
                 <input type="hidden" name="hosted_button_id" value="A2NXP8YEXG6EL" />
                 <input  type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
