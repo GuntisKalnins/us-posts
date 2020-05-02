@@ -3,7 +3,7 @@
     <head>
         @include('layouts.partials._head')
     </head>
-    <body style="background: url('/storage/uploads/american-flag.jpg') no-repeat center center fixed">
+    <body>
         <div id="app">
             @include('layouts.partials._navigation')
             

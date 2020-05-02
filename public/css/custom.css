@@ -1,0 +1,11 @@
+.card{
+ opacity: 0.97;
+}
+
+body{
+    background: url("/storage/uploads/american-flag.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
