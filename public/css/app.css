@@ -73,7 +73,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f8fafc;
-  background: url(/storage/uploads/american-flag.jpg) no-repeat center center fixed;
+  background: url(/public/storage/uploads/american-flag.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
