@@ -1,9 +1,12 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark shadow-sm">
     <a class="navbar-brand" href="{{ url('/') }}">
         <img src="/storage/uploads/logo.png" width="45" alt="brand-logo" class="d-inline-block align-middle">
-        <span class="d-inline-block align-middle">US Posts ({{ $area->name }})</span>
-        
+        <span class="d-inline-block align-middle">US Posts ({{ $area->name }})</span>        
     </a>
+    <div class="">
+        <a class="mr-3" href="http://uk-posts.com">UK Posts</a>
+    </div>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
         <span class="navbar-toggler-icon"></span>
     </button>
