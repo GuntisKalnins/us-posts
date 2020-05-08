@@ -10,6 +10,11 @@
 
 <!-- Scripts -->
 <script data-ad-client="pub-1173892613878847" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Custom -->
+<link rel="preconnect" href="https://tpc.googlesyndication.com">
+<link rel="preconnect" href="https: //www.googletagservices.com">
+
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
