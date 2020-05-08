@@ -9,3 +9,11 @@ body{
     background-size: cover;
     -o-background-size: cover;
 }
+
+.nav-item {
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  background-color: rgba(146, 143, 143, 0.24);
+}

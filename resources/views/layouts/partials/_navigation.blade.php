@@ -10,7 +10,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Left Side Of Navbar -->
-    <form class="d-inline-block align-middle align-self-left mt-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <form class="d-inline-block align-middle align-self-left mt-2 mr-3" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick" />
         <input type="hidden" name="hosted_button_id" value="A2NXP8YEXG6EL" />
         <input  type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
@@ -40,8 +40,8 @@
             </a>
             
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <li class="nav-item active"><a class="dropdown-item" href="{{ route('listings.viewed.index', [$area]) }}">Recently viewed</a></li>
-            <li class="nav-item active"><a class="dropdown-item" href="{{ route('listings.published.index', [$area]) }}">My listings</a></li>
+                <li class="nav-item active"><a class="dropdown-item" href="{{ route('listings.viewed.index', [$area]) }}">Recently viewed</a></li>
+                <li class="nav-item active"><a class="dropdown-item" href="{{ route('listings.published.index', [$area]) }}">My listings</a></li>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
