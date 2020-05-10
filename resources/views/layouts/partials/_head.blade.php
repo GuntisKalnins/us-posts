@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="free, listings, ads, post classifieds, classified ads, advertising">
 <meta name="application-name" content="Classified Ads">
-<meta name="description" content="Free classified ads in USA for cars, jobs, real estate, dating, business opportunities and everything else. Post classifieds ads in United States or browse listings to find everything you need for free!">
+<meta name="description" content="Free classified ads in USA for cars, jobs, real estate, dating, business opportunities and everything else. Post classifieds in United States or browse listings to find everything you need for free.">
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
