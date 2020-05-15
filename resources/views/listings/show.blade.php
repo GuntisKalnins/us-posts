@@ -27,7 +27,7 @@
                     {!! nl2br(e($listing->body)) !!}
                     
                         <div>
-                            <img id="myImg" src="{{ asset($listing->listingImage()) }}"  alt="listing-picture" class="img-fluid img-thumbnail mt-4" width="250">
+                            <img id="myImg" src="{{ asset($listing->listingImage()) }}" style="width:100%;max-width:250px" alt="listing-picture" class="img-fluid img-thumbnail mt-4">
                             <div id="myModal" class="modal">
                                 <span class="close">&times;</span>
                                 <img class="modal-content" id="img01">
@@ -35,17 +35,11 @@
                             </div>
                         </div>
 
-
-
                     <hr>
                     <p>Viewed {{ $listing->views() }} times</p>
                 </div>
 
-
                 <div class="card-body">
-
-                
-
 
                     Contact <strong>{{ $listing->user->name }}</strong>
                     @if (Auth::guest())
