@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark shadow-sm">
-    <a class="navbar-brand m-0" href="{{ url('/') }}">
+    <a class="navbar-brand m-0 pt-0" href="{{ url('/') }}">
         <img src="/storage/uploads/logo.png" width="25" alt="brand-logo" class="d-inline-block align-middle">
         <span class="d-inline-block align-middle">US Posts ({{ $area->name }})</span>        
     </a>
@@ -12,8 +12,8 @@
         <!-- Left Side Of Navbar -->
 
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link mt-1 text-primary" href="http://uk-posts.com">UK Posts</a></li>
-            <li class="nav-item active"><a class="nav-link mt-1" href="{{ route('category.index', [$area]) }}">Categories</a></li>
+            <li class="nav-item active"><a class="nav-link text-primary" href="http://uk-posts.com">UK Posts</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ route('category.index', [$area]) }}">Categories</a></li>
         </ul>
         
     <!-- Right Side Of Navbar -->
@@ -21,17 +21,17 @@
     <!-- Authentication Links -->
         @guest
             <li class="nav-item">
-                <a class="nav-link mt-1" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
             </li>
             @if (Route::has('register'))
                 <li class="nav-item">
-            <a class="nav-link mt-1" href="{{ route('register') }}">{{ __('Register') }}</a>
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
             @endif
             @else
-            <li class="nav-item active"><a class="nav-link mt-1" href="{{ route('listings.create', [$area]) }}">New listing</a></li>
-            <li class="nav-item active"><a class="nav-link mt-1" href="{{ route('listings.favourites.index', [$area]) }}">Favourites</a></li>
-            <a id="navbarDropdown" class="nav-link mt-1 dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <li class="nav-item active"><a class="nav-link" href="{{ route('listings.create', [$area]) }}">New listing</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ route('listings.favourites.index', [$area]) }}">Favourites</a></li>
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->name }} <span class="caret"></span>
             </a>
             
