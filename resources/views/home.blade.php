@@ -14,8 +14,8 @@
             <div class="col-sm-6 col-lg-4" id="accordion-{{ $state->id }}">
                 <div class="card-header pb-2 pt-3" id="heading{{ $state->id }}">
                     <div class="mb-0 text-center">
-                        <h4 class="mb-0 pt-1"><a class="text-dark p-1" href="{{ route('user.area.store', $state) }}">{{ $state->name }}</a></h4>
-                        <button class="btn btn-link text-secondary p-1" data-toggle="collapse" data-target="#collapse{{ $state->id }}" aria-expanded="true" aria-controls="collapse{{ $state->id }}">
+                        <h4 class="mb-0 p-2"><a class="text-dark p-2" href="{{ route('user.area.store', $state) }}">{{ $state->name }}</a></h4>
+                        <button class="btn btn-link text-secondary p-2 mb-1" data-toggle="collapse" data-target="#collapse{{ $state->id }}" aria-expanded="true" aria-controls="collapse{{ $state->id }}">
                             <span class="mb-0">(show counties)</span>
                         </button>                        
                     </div>
