@@ -12,7 +12,6 @@
         <!-- Left Side Of Navbar -->
 
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link text-primary" href="http://uk-posts.com">UK Posts</a></li>
             <li class="nav-item active"><a class="nav-link" href="{{ route('category.index', [$area]) }}">Categories</a></li>
         </ul>
         
